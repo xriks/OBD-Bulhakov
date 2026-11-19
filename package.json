@@ -1,0 +1,14 @@
+{
+  "name": "hooked-board-game-rental",
+  "version": "1.0.0",
+  "description": "Hooked — веб-застосунок оренди настільних ігор (Node.js + Express + SQLite)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "reset-db": "node -e \"require('fs').rmSync('hooked.db',{force:true});require('fs').rmSync('hooked.db-wal',{force:true});require('fs').rmSync('hooked.db-shm',{force:true})\" && node server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.5.0",
+    "express": "^4.19.2"
+  }
+}
