@@ -1,0 +1,16 @@
+{
+  "name": "hooked-board-game-rental",
+  "version": "1.0.0",
+  "description": "Hooked",
+  "main": "server.js",
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node server.js",
+    "reset-db": "node -e \"require('fs').rmSync('data',{recursive:true,force:true})\" && node server.js",
+    "db:show": "node src/db/show.js",
+    "db:dump": "node src/db/show.js --dump"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

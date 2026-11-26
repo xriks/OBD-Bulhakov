@@ -1,0 +1,227 @@
+/* ==========================================================================
+   3/4 · layout.css — хедер, контейнер, футер, адмін-сітка
+   Поля сторінки однакові для хедера й контенту (--gutter + безпечна зона).
+   ========================================================================== */
+
+/* --- Хедер --- */
+.top {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  min-height: var(--header-height);
+  padding-block: var(--space-2);
+  padding-left: max(var(--gutter), env(safe-area-inset-left), calc((100% - var(--page-max)) / 2 + var(--gutter)));
+  padding-right: max(var(--gutter), env(safe-area-inset-right), calc((100% - var(--page-max)) / 2 + var(--gutter)));
+  background: var(--color-header);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+#nav {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+#nav a {
+  padding: 7px 14px;
+  border-radius: var(--radius-pill);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  color: var(--color-text);
+}
+
+#nav a:hover {
+  background: var(--color-surface);
+}
+
+#nav a.on {
+  background: var(--color-primary);
+  color: var(--color-primary-text);
+}
+
+#nav .who {
+  max-width: 18ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+/* --- Контент --- */
+main {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  max-width: var(--page-max);
+  margin-inline: auto;
+  padding-block: var(--space-6) var(--space-7);
+  padding-left: max(var(--gutter), env(safe-area-inset-left));
+  padding-right: max(var(--gutter), env(safe-area-inset-right));
+}
+
+.foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+  padding: var(--space-4) max(var(--gutter), calc((100% - var(--page-max)) / 2 + var(--gutter)));
+  padding-bottom: max(var(--space-4), env(safe-area-inset-bottom));
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text);
+  background: var(--color-header);
+  border-top: 1px solid var(--color-border);
+}
+
+/* --- Адмін-панель: бокове меню + вміст --- */
+.admin {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.admin > section {
+  min-width: 0;
+}
+
+.side {
+  position: sticky;
+  top: calc(var(--header-height) + var(--space-4));
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.side a {
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.side a:hover {
+  background: var(--color-surface-2);
+}
+
+.side a.on {
+  background: var(--color-primary);
+  color: var(--color-primary-text);
+}
+
+.side small {
+  padding: 12px 14px 4px;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: var(--space-4);
+}
+
+.toolbar h2 {
+  margin: 0;
+  font-size: var(--text-xl);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.cols2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap: var(--space-4);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
+  gap: var(--space-5);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+/* Хедер на вузьких екранах: логотип і тема в першому рядку, меню — другим, з прокруткою */
+@media (max-width: 640px) {
+  .top {
+    row-gap: 0;
+  }
+
+  .logo {
+    margin-right: auto;
+  }
+
+  #nav {
+    order: 3;
+    flex: 1 0 100%;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: var(--space-1);
+    scrollbar-width: none;
+  }
+}
+
+@media (max-width: 820px) {
+  .admin {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .side {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .side small {
+    display: none;
+  }
+}
+main:has(> .admin) { max-width: min(1500px, 100%); }
+.admin { grid-template-columns: 200px minmax(0, 1fr); gap: var(--space-4); }
+@media (max-width: 820px) { .admin { grid-template-columns: minmax(0, 1fr); } }

@@ -1,0 +1,103 @@
+:root {
+  --palette-fog: #4B5E52;
+  --palette-sage: #A7B6A7;
+  --palette-white: #F5F9F5;
+  --palette-gray: #C9CDD1;
+  --palette-deep: #2F3A34;
+
+  --color-bg: #F5F9F5;
+  --color-header: #F5F9F5;
+  --color-surface: #E3EAE3;
+  --color-surface-2: #D2DCD2;
+  --color-input: #FAFCFA;
+  --color-border: #B4C2B6;
+  --color-text: #2F3A34;
+  --color-muted: #55625A;
+
+  --color-primary: #4B5E52;
+  --color-primary-text: #F5F9F5;
+  --color-primary-hover: #2F3A34;
+  --color-accent: #A7B6A7;
+  --color-accent-text: #2F3A34;
+  --color-gray: #C9CDD1;
+
+  --color-danger: #9B4538;
+  --color-danger-hover: #7A342A;
+  --color-ok: #2F5A3C;
+  --color-warn: #38443E;
+
+  --badge-ok-bg: #CFDFD2;
+  --badge-warn-bg: #D6DBDE;
+  --badge-bad-bg: #EBCFC8;
+  --badge-bad-text: #8A3A2E;
+
+  --color-overlay: rgba(47, 58, 52, 0.55);
+  --color-warnbox-bg: #EBCFC8;
+  --color-warnbox-border: #D9AFA5;
+
+  --shadow-sm: 0 1px 3px rgba(47, 58, 52, 0.12);
+  --shadow-md: 0 6px 18px rgba(47, 58, 52, 0.14);
+  --shadow-lg: 0 18px 38px rgba(47, 58, 52, 0.22);
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  --font-main: 'Montserrat', system-ui, sans-serif;
+  --text-xs: 0.72rem;
+  --text-sm: 0.86rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.7rem;
+  --text-2xl: clamp(2.6rem, 8vw, 5rem);
+
+  --page-max: 1160px;
+  --gutter: clamp(16px, 4vw, 32px);
+  --header-height: 64px;
+  --speed: 0.2s;
+}
+
+:root[data-theme="dark"] {
+  --color-bg: #232C27;
+  --color-header: #232C27;
+  --color-surface: #2E3933;
+  --color-surface-2: #3A473F;
+  --color-input: #232C27;
+  --color-border: #4D5E53;
+  --color-text: #F2F8F2;
+  --color-muted: #A9B5AC;
+
+  --color-primary: #A7B6A7;
+  --color-primary-text: #1F2823;
+  --color-primary-hover: #C6D1C6;
+  --color-accent: #4B5E52;
+  --color-accent-text: #F5F9F5;
+  --color-gray: #55605A;
+
+  --color-danger: #B8564A;
+  --color-danger-hover: #CF6D60;
+  --color-ok: #BFE0C8;
+  --color-warn: #D5DCD8;
+
+  --badge-ok-bg: #2F4A38;
+  --badge-warn-bg: #3E4A44;
+  --badge-bad-bg: #5A2E28;
+  --badge-bad-text: #F0B8AE;
+
+  --color-overlay: rgba(10, 14, 12, 0.7);
+  --color-warnbox-bg: #4A2A25;
+  --color-warnbox-border: #7A4A43;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 18px 38px rgba(0, 0, 0, 0.55);
+}
